@@ -27,8 +27,6 @@ string[] translations = ["zero", "one", "two", "three", "four", "five", "six", "
 string pattern = $"(\\d|{string.Join('|', translations)})";
 Regex regex = new Regex(pattern);
 List<int> digits = new List<int>();
-List<(string, int)> results = new List<(string, int)>();
-
 
 foreach (var line in lines)
 {
@@ -45,7 +43,6 @@ foreach (var line in lines)
     string firstDigit = firstMatch.Length == 1 ? firstMatch.Value : Array.IndexOf(translations, firstMatch.Value).ToString();
     string lastDigit = lastMatch.Length == 1 ? lastMatch.Value : Array.IndexOf(translations, lastMatch.Value).ToString();
     digits.Add(Convert.ToInt32(firstDigit + lastDigit));
-    results.Add((line, Convert.ToInt32(firstDigit + lastDigit)));
 }
 
 Console.WriteLine($"Part 2: {digits.Sum()}");
