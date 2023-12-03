@@ -68,6 +68,7 @@ public static class Part2
                     catch (ArgumentException)
                     {
                         // TODO: never be stupid enough to swallow exceptions again
+                        System.Console.WriteLine($"Checking out of bounds [{lineIndex + checkOffset},{characterIndex}]");
                     }
                 }
 
