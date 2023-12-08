@@ -4,7 +4,7 @@ public static class Part1
 {
     public static void Go()
     {
-        var input = File.ReadAllText("part1.txt");
+        var input = File.ReadAllText("input.txt");
 
         var lines = input.Split(Environment.NewLine, StringSplitOptions.RemoveEmptyEntries);
         var digits = new int[lines.Length];
